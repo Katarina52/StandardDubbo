@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zhf.dao.StandardMapper">
+    <select id="queryAllByPage" parameterType="Standard" resultType="Standard">
+        SELECT * FROM standard
+        <where>
+            <if test="std_num!= null and std_num!=''">
+                and std_num LIKE conCat('%',#{std_num},'%')
+            </if>
+            <if test="zhname!=null and zhname!=''">
+                AND zhname LIKE conCat('%',#{zhname},'%')
+            </if>
+        </where>
+        ORDER BY std_num
+    </select>
+
+    <insert id="save" parameterType="Standard">
+        INSERT INTO standard(std_num,zhname,version,`keys`,release_date,impl_date)
+        VALUES(#{std_num},#{zhname},#{version},#{keys},now(),now())
+    </insert>
+
+    <select id="queryById" parameterType="Integer" resultType="Standard">
+        SELECT * FROM standard WHERE id=#{id}
+    </select>
+
+    <update id="update" parameterType="Standard">
+        UPDATE standard
+        SET std_num=#{std_num},
+        zhname=#{zhname},
+        version=#{version},
+        `keys`=#{keys},
+        release_date=now(),
+        impl_date=now()
+        WHERE id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="Integer">
+        DELETE FROM standard WHERE id=#{id}
+    </delete>
+</mapper>

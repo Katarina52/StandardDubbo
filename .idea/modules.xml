@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/StandardDubbo.iml" filepath="$PROJECT_DIR$/.idea/StandardDubbo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/standard-commom/standard-commom.iml" filepath="$PROJECT_DIR$/standard-commom/standard-commom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/standard-consumer/standard-consumer.iml" filepath="$PROJECT_DIR$/standard-consumer/standard-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/standard-provider/standard-provider.iml" filepath="$PROJECT_DIR$/standard-provider/standard-provider.iml" />
+    </modules>
+  </component>
+</project>

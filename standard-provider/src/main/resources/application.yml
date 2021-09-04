@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/standards?serverTimezone=Asia/Shanghai
+    username: root
+    password: xingyanchao
+mybatis:
+  type-aliases-package: cn.xyc.entity
+  configuration:
+    auto-mapping-behavior: full
+dubbo:
+  application:
+    name: standard-provider
+  registry:
+    address: zookeeper://127.10.0.1:2181
+  protocol:
+    name: dubbo
+    port: 20888
+
+
